@@ -1,0 +1,31 @@
+.root {
+	-fx-alignment: center;
+	-fx-base: #000000; 
+}
+
+.label {
+	-fx-color: #FFFFFF;
+	-fx-stroke-width: 1;
+}
+
+.text-field {
+	-fx-background-color: #000000;
+	-fx-border-color: #FFFFFF;
+	-fx-border-radius: 5px;
+	-fx-text-fill: #FFFFFF;
+	-fx-stroke-width: 1;
+}
+
+.text-area {
+    -fx-text-fill: #ffffff;
+    -fx-border-color: #FFFFFF;
+	-fx-border-radius: 5px;
+	-fx-stroke-width: 1;
+}
+
+.text-area .content{
+	-fx-background-color: #000000;
+	-fx-text-fill: #00ff00;
+	-fx-highlight-text-fill: #000000;
+	-fx-stroke-width: 1;
+}

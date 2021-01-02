@@ -1,0 +1,41 @@
+NPCFileDocumentation
+By: Colin Truemner
+
+Example file
+
+`
+info
+name:Colin Truemner
+symbol:C
+damage:2
+defense:6
+health:100
+speed:4
+description:Looks like a shady test character
+money:100
+sellMod:.24
+buyMod:-.20
+
+greeting
+Hello! I'm a test character with some random dialogue
+This is random dialogue hello
+
+dialogue
+1:Who are you?:Hi I'm Colin
+2:Where are we?:Looks like we're in [ROOM]
+
+cannotFight
+`
+
+Section: info
+This section assigns npc stat info
+name - npc name
+symbol - symbol that appears on the map
+damage, defense, health, speed - stats for fighting
+description - what prints when you look at the npc
+money - how much money the npc has when shopping
+sellMod, buyMod - price modifiers for buying and selling items
+
+Section: greeting
+Section: dialogue
+Section: cannotFight

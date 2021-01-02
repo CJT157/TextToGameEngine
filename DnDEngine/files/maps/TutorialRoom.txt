@@ -1,0 +1,32 @@
+16 10
+################
+#   !  !  !  ! #
+# E            #
+#     |   _   !#
+################
+##       ##    #
+#    #    #    #
+# E  #    #    #
+#   ##!       ##
+#######+########
+loot
+8 8:Food 1
+
+messages
+8 4:Hello hello! This is your message board speaking, if you've managed to read this, that means you found out how to use the look buttons!`If you need help on more things, use the help command to learn how they work.`
+8 7:OOooOOh the second board! I'm here to tell you about searching! Typing search, or s, or even better press 'Shift' lets you look around the immediate tile that you're standing on!`Use it to find objects in loot piles like this one to the right!`Quick thing, press 'E' to take all of the items on the ground`  
+8 10:hi i don't really feel like talking right now keep moving.`
+8 13:Hey yeah I'm gonna be quick, you can use levers "/"`by walking up to them and typing "use" and the direction it is, or by standing on it and pressing 'Space'! Try it on the lever below!`
+6 14:If you're curious, every map and character you see in this game is generated from a text file and then loaded into the program.`If you want, you can throw an extra '#' somewhere on any map in the 'files/maps' folder and then reload the game to se these changes! There isn't any error catching for this, so please be sure to add it within the boundaries set. Otherwise, have a good day and have fun with the rest of this!`
+1 6:Walk up to the 'C' and type 'talkto [direction]' to start talking to them. I've spent a lot of time trying to get this NPC dialogue/shop system to work. Hopefully, by time I have this sent out, I have the shop system working.`
+0 7:Look at you getting interested in the weird wall, I like you *kiss emoji*`
+
+levers
+6 10:5 12,5 13
+
+exits
+2 2:FirstRoom,15 2,
+7 2:none,player-here
+
+npcs
+4 2:ExampleCharacter.txt

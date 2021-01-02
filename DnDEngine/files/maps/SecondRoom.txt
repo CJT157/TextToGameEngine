@@ -1,0 +1,12 @@
+9 6
+#########
+#    / ##
+# E     #
+#     ! #
+#       #
+#########
+messages
+2 6:Spider-Man: Far From Home`This movie took all of the seriousness of Endgame and put the classic Marvel humor on it. Still a really good movie anyways.`Also THis one isn't supposed to be serious, just wanted to throw this in for fun.`
+
+exits
+3 2:FirstRoom,2 35,

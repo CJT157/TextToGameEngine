@@ -1,0 +1,60 @@
+37 19
+#####################################
+##  !   #   ! ######      #         #
+#               ###  !         !    #
+# E    #          #       #        ##
+#    #### #       #       ###      ##
+######! #####    ###   #### #    ####
+##/               #      ###       ##
+#     ####        #    ! ## !       #
+#  ! #   ##  !   ##     ####      ! #
+###### ! #########    ##########    #
+##       ### /    ## ### ! ##       #
+#      ###!     !   ###    #        #
+# !   ###         ###  ###     !   ##
+#      ####     ##              #####
+##       #     ##    !   ############
+### ##         ##       ###  !      #
+#    ##  !    ####      #        ! E#
+## ! #### #  ###### !      ###      #
+#####################################
+
+loot
+11 2:Space-stone 1
+1 2:Reality-stone 1
+6 10:Power-stone 1
+8 15:Mind-stone 1
+17 33:Time-stone 1
+4 18:Soul-stone 1
+
+messages
+17 4:Iron Man 1`Our introduction to the MCU, this movie gave us the hero Iron Man and introduced us to the self-centered ego-maniac, Tony Stark.`
+17 12:Incredible Hulk`A lonesome chapter in the MCU, it introduced the raging beast Hulk to the MCU and also General Ross. Both are smaller but very key characters in the wider scope of the MCU.`
+10 13:Iron Man 2`Iron Man's second outing, this movie had a greater focus of building up SHIELD. It introduced Black Widow and War Machine to the MCU.`
+13 6:Thor`Our first look into the cosmos of Marvel. The movie gave us one of the greatest chaotic-neutral characters in fiction, and also Thor was in the movie I guess. It introduced the idea of a wider universe to the MCU.`
+10 3:Captain America`The oldest chapter of Phase 1 and the MCU as a whole. The movie gave us Captain America, introduced the first Infinity Stone held within the Tesseract, and leads us into the events of Avengers.`
+9 7:Avengers`What everyone thought would be the crossover of the decade, 3 years in the making. This movie brought all of the prior heroes together and even introduced Hawkeye. The post-credits scene made many question what the MCU was ultimately leading to, and if they'd be able to pull it off again.`
+6 2:Iron Man 3`Our first good look at a character arc in the MCU, having Tony Stark affected directly by the events of Avengers. Up until this point many of the arcs have been contained to a single movie. and we start to see how the events of each movie have taken a toll on Tony. This movie showed him dealing with PTSD and turning over a new leaf in his journey as a hero.`
+1 3:Thor: The Dark World`One of the most forgotten movies in the MCU. It brought the reality stone to the big screen and the start of Loki's turn from the dark side. It may not have done much to the MCU, but it provided more to Thor and Loki's relationship as a whole.`
+2 9:Captain America: The Winter Soldier`Taking place in the current day, this movie turned a superhero movie into a spy movie. It introduces the Winter Soldier and Falcon, while providing more to Steve and Natasha's friendship. It also brought about the destruction of SHIELD and everything about it, changing the political structure of the movies to come.` 
+7 10:Guardians of the Galaxy`Another installment in the cosmic side of the MCU and my personal favorite origin movie in the MCU. It brought us the Guardians of the Galaxy and the first appearance of the Power Stone, while also providing some necessary exposition for viewers to understand what the stones are. This is also the first real appearance of Thanos, who states that Gamora is his favorite daughter.` 
+7 16:Avengers: Age of Ultron`The second huge teamup within the MCU, introducing Scarlet Witch, Quicksilver(rest in peace), and Vision to the MCU. It also deepened Hawkeye's character, showing us his family and the other side of him not even comic book nerds knew. With Tony, we see his quest for saving everyone rather than selling weaponry continuing, wanting to provide an AI capable of saving the world, to the world. It shows us where he's come from the first Avengers and how far almost dying from the nuke has brought him.`
+11 23:Ant-Man`A break from teamups in a more grounded *get it* installment to the MCU. It introduces us to the smaller, quantum world of the MCU, and to the hero Ant-Man.
+16 21:Captain America: Civil War`Getting the basic stuff out of the way, this movie introduced Black Panther and Spider-Man. The important stuff, however, is this movie making the Avengers actually having to take responsibility for the destruction they've caused. It also really allows every character's personalities to shine, showing how caring and anxious Tony is of the next big thing, how far Steve is from kneeling to the US government, and where Vision's alignments lie. It also brings to question who is right, and honestly I believe the writers believe neither is. In the end it wasn't about the Accords, it was about personal relationships and how those can really drive a person. It split the Avengers apart and brought the necessary setup for Thanos to win in Infinity War.`
+16 31:Doctor Strange`Another of my favorite origin movies, bringing us into the world of the mystic arts and Doctor Strange. With the mind melting visuals and, if there in person, would probably induce motion sickness. This movie gives us the first look at the Time Stone and the dark dimension, two key parts of the Marvel universe.`
+11 28:Guardians of the Galaxy: Vol.2`A story that, with the theme of family in its heart, one might mistake it for a Fast and the Furious movie. This gave us the answer of who Peter Quill's father is, and also showed us just how much he loves his mom. It also shows us how he responds to hearing about someone who killed someone that Peter loved, something very important for the next Avengers movie. It also gave us Mantis, who’s powers will also come in handy in the future movies.`
+10 34:Thor: Ragnarok`While this wasn’t the last movie before Infinity War, it led directly into the first moments of it. This movie further strengthened the bond between Loki and Thor, while also showing the paths they’re going down and how Thor is okay with it. It also begins Thor’s journey through depression, having to now deal with the loss of his mother, father, most of Asgard, and now his sister. The only thing that could possibly push him over the edge now would be losing Loki, or possibly not preventing the end of the universe. That’d be crazy if that actually happened.`Loki, at the climax of the movie, grabbed the tesseract for himself hoping to get away with one last scheme.`
+8 25:Spider-Man: Homecoming`Rather than building a bond between Peter and his Uncle Ben and telling that story to death, this movie gave us Peter and Tony. While this movie was about Peter being a superhero and learning how to be a hero with his new tools, it was really about Peter and Tony’s relationship. What started as a recruitment trip in Civil War has become a full-fledged father and son relationship. Building this is key to their interactions in Infinity War, along with what can be considered the saddest moment in the movie.`
+6 31:Black Panther`The first African-American led MCU movie. It brought us the country of Wakanda and is one of the key plot points of Avengers Infinity War. After a slight hint at the Dora Milaje and a post-credits teaser in Captain America: Civil War, it was really fun to see this world. This provided the setup for much of Wakanda’s army and technological advancements to be used again in Infinity War, while also showing how each of the tribes have been united after Killmonger’s rule.`
+4 21:Avengers: Infinity War`This is it, what the MCU has been working towards for the past 6 years. The Avengers are still split apart, most in hiding, others completely separated from the action, nothing is as it once was. Thor, Hulk, and Loki are all still together with the Space Stone after Ragnarok, Steve, Falcon, and Black Widow are running as fugitives after Civil War, and Wanda and Vision are off in Edinburgh living together. Everyone else is off on their own, separated without much connection to the others. With this, we know where most of the Infinity Stones are located, with only one left for both us and the MCU to find. The Guardians are finally brought into the breather part of the MCU, with a huge role to play in the greater story. In the same way, Doctor Strange is also introduced to the greater part of the MCU, and also leads the fight in understanding how to beat Thanos. He’s also the only one that got to watch Endgame a year early.`
+1 20:Ant-Man and The Wasp`While Paul Rudd is a great comedian, this movie served the purpose of introducing the Macgyver needed to turn the events of Infinity War. While it does provide more to the Pym and van Dyne’s story and an actual story, the main goal of this is to introduce the quantum realm and potential time travel in Endgame. However, it did give us one of the coolest tie-ins to Infinity War, having the end credits show Scott travelling into the quantum realm , getting stuck, and seeing all of the souls of everyone snapped away start appearing there. (If you didn’t know about this please rewatch the scene synced with the snap, it’s really incredible to see the tiny detail that sadly wasn’t brought up in Endgame)`
+3 29:Captain Marvel`There isn’t much to say about this movie, other than saying that it had to somehow introduce one of the most overpowered characters in the MCU. It gave us the relationship between Carol and Nick, along with the event that caused him to lose his eye. Along with this, it gave us a better look into more of the MCU’s cosmic side, something that’s always fun to see more of.`
+2 33:Avengers: Endgame`The finale of all finale’s, giving us the last chapter of Steve’s and Tony’s stories. It used the prior two movies to provide the strength and plot device to provide a plan for the Avenger’s to execute. It also is the first Avengers movie, and likely the last, for the Avengers to legitimately avenge something. The first act has us bringing the gang back together, the second with the Avengers creating time travel and regaining the stones, and the third with the final battle of Endgame.`While this was a finale to the Avenger’s story, it feels as though this movie acted more as a love letter to the MCU, visiting huge moments in the story, having an insane number of callbacks, and giving us some final moments to some of our favorite characters. To further signal this as the finale to the MCU, this movie didn’t have a post-credits scene to really let the final moments hit.`
+
+levers
+12 2:10 5,
+8 13:8 18,8 19
+
+exits
+15 2:TutorialRoom,2 2,
+2 35:SecondRoom,3 2,
