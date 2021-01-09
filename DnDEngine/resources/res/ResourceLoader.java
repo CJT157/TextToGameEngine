@@ -5,35 +5,47 @@ import java.io.File;
 public class ResourceLoader {
 	
 	 private static final String FOLDERNAME = "files";
-	 private static final String NPCSFOLDER = FOLDERNAME + "/npcs";
-	 private static final String MAPSFOLDER = FOLDERNAME + "/maps";
-	 private static final String ITEMSFOLDER = FOLDERNAME + "/items";
-	 private static final String MEMORYFOLDER = FOLDERNAME + "/memory";
-
+	 private static String gameFolder = ""; 
+	 private static String NPCSFOLDER = gameFolder + "/npcs";
+	 private static String MAPSFOLDER = gameFolder + "/maps";
+	 private static String ITEMSFOLDER = gameFolder + "/items";
+	 private static String MEMORYFOLDER = gameFolder + "/memory";
+	 
+	 private static String userDirectory = System.getProperty("user.dir");
+	 
+	 public static void setGameFolder(String folderName) {
+		 gameFolder = FOLDERNAME + "/" + folderName;
+		 NPCSFOLDER = gameFolder + "/npcs";
+		 MAPSFOLDER = gameFolder + "/maps";
+		 ITEMSFOLDER = gameFolder + "/items";
+		 MEMORYFOLDER = gameFolder + "/memory";
+	 }
+	 
+	 public static File getAllGames() {
+		 System.out.println("Gathering files from " + userDirectory +"/"+ FOLDERNAME);
+		 
+	     return new File(userDirectory + "/" + FOLDERNAME);
+	 }
     
 	 public static File getNPCSFolder(){
-		 String userDirectory = System.getProperty("user.dir");
-		 System.out.println("Gathering files from " + userDirectory+"/"+NPCSFOLDER); 
+		 System.out.println("Gathering files from " + userDirectory +"/"+NPCSFOLDER);
 	
 	     return new File(userDirectory+"/"+NPCSFOLDER);
 	 }
 	 
 	 public static File getMemory(String fileName){
-		 String userDirectory = System.getProperty("user.dir");
 		 System.out.println("Getting file " + userDirectory+"/"+MEMORYFOLDER+"/"+fileName);
 	
 	     return new File(userDirectory+"/"+MEMORYFOLDER+"/"+fileName);
 	 }
     
 	 public static File getMapsFolder(){
-		 String userDirectory = System.getProperty("user.dir");
 		 System.out.println("Gathering files from " + userDirectory+"/"+MAPSFOLDER); 
 	
 	     return new File(userDirectory+"/"+MAPSFOLDER);
 	 }
 	 
 	 public static File getItemsFolder(){
-		 String userDirectory = System.getProperty("user.dir");
 		 System.out.println("Gathering files from " + userDirectory+"/"+ITEMSFOLDER); 
 	
 	     return new File(userDirectory+"/"+ITEMSFOLDER);

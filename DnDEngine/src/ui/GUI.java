@@ -1,6 +1,6 @@
 package ui;
 
-import java.io.FileNotFoundException;
+import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Random;
@@ -11,6 +11,7 @@ import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextArea;
@@ -29,6 +30,7 @@ import map.MapReader;
 import player.Entity;
 import player.NPCReader;
 import player.Player;
+import res.ResourceLoader;
 import textsystem.TalkingState;
 import textsystem.TextSystem;
 
@@ -82,14 +84,11 @@ public class GUI extends Application {
 
 		primaryStage.setTitle("TextRPGEngine: " + splashText);
 
-		main = mainScene();
-		main.getStylesheets().add("global_v1.css");
+		title = titleScene();
+		title.getStylesheets().add("global_v1.css");
 		
 		battle = battleScene();
 		battle.getStylesheets().add("global_v1.css");
-		
-		title = titleScene();
-		title.getStylesheets().add("global_v1.css");
 
 		primaryStage.setScene(title);
 		primaryStage.show();
@@ -100,10 +99,29 @@ public class GUI extends Application {
 
 		Label title = new Label("Text Adventure");
 		grid.add(title, 0, 0);
+		
+		ComboBox<String> comboBox = new ComboBox<String>();
+		
+		File gamesFolder = ResourceLoader.getAllGames();
+		for (File file : gamesFolder.listFiles()) {
+		    if (file.isDirectory() && (!file.getName().equals(".DS_Store"))) {
+		    	comboBox.getItems().add(file.getName());
+		    }
+		}
+		
+		grid.add(comboBox, 0, 1);
 
 		Button button = new Button("Start Game");
-		button.setOnAction(e -> GUI.primaryStage.setScene(main));
-		grid.add(button, 0, 1);
+		button.setOnAction(e -> {
+			ResourceLoader.setGameFolder(comboBox.getValue());
+			try {
+				main = mainScene();
+				main.getStylesheets().add("global_v1.css");
+			} catch (IOException e1) {
+			}
+			GUI.primaryStage.setScene(main);
+			});
+		grid.add(button, 0, 2);
 
 		return new Scene(grid);
 	}
