@@ -27,7 +27,7 @@ public class NPCReader {
 	
 	public void loadNPCs() throws IOException {
 		
-		File file = ResourceLoader.getNPCSFolder();
+		File file = ResourceLoader.getFolder("npcs");
 		for (File f : file.listFiles()) {
 		    if (f.isFile()) {
 		    	npcs.put(f.getName(), readNPC(f));

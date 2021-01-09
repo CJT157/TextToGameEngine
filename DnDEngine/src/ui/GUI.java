@@ -102,7 +102,7 @@ public class GUI extends Application {
 		
 		ComboBox<String> comboBox = new ComboBox<String>();
 		
-		File gamesFolder = ResourceLoader.getAllGames();
+		File gamesFolder = ResourceLoader.getFolder("games");
 		for (File file : gamesFolder.listFiles()) {
 		    if (file.isDirectory() && (!file.getName().equals(".DS_Store"))) {
 		    	comboBox.getItems().add(file.getName());

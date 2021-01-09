@@ -1,0 +1,25 @@
+info
+name:Colin Truemner
+symbol:C
+damage:2
+defense:6
+health:100
+speed:4
+description:Looks like a shady test character
+money:100
+sellMod:.24
+buyMod:-.20
+
+greeting
+Hello! I'm a test character with some random dialogue
+This is random dialogue hello
+
+dialogue
+1:Who are you?:Hi I'm Colin
+2:Where are we?:Looks like we're in [ROOM]
+
+inventory
+Food 2
+Weapon 4
+
+cannotFight

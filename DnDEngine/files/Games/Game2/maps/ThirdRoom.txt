@@ -1,0 +1,8 @@
+4 4
+####
+#E #
+#  #
+####
+
+exits
+2 1:none,player-here

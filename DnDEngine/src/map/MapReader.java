@@ -26,7 +26,7 @@ public class MapReader {
 	
 	public void loadMaps() throws IOException  {
 		
-		File folder = ResourceLoader.getMapsFolder();
+		File folder = ResourceLoader.getFolder("maps");
 
 		//work on multiple maps system eventually, honestly not important right now
 		for (File file : folder.listFiles()) {
