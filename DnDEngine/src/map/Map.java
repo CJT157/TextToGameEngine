@@ -20,8 +20,8 @@ public class Map {
 	private MapPieceBuilder builder = new MapPieceBuilder();
 	private int width;
 	private int length;
-	private boolean playerPlaced = false;
 	private Player player = Player.getPlayer();
+	private boolean playerPlaced = false;
 	private boolean playerIsHere = false;
 
 	public Map(int length, int width) {
@@ -227,5 +227,17 @@ public class Map {
 
 	public boolean isPlayerHere() {
 		return this.playerIsHere;
+	}
+	
+	public String saveMap() {
+		String map = length + ", " + width + "\n";
+		for (int i = width - 1; i >= 0; i--) {
+			for (int j = 0; j < length; j++) {
+				map += layout[i][j].getSymbol();
+			}
+			map += "\n";
+		}
+		
+		return map;
 	}
 }

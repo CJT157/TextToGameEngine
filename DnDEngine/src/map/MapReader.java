@@ -86,6 +86,9 @@ public class MapReader {
 			} else if (nextLine.equals("npcs")) {
 				mapSection = "npcs";
 				continue;
+			} else if (nextLine.equals("player-here")) {
+				mapSection = "player-here";
+				continue;
 			} else if (nextLine.equals("")) {
 				continue;
 			}
