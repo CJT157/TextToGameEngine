@@ -131,7 +131,9 @@ public class GUI extends Application {
 
 		// load maps and set the start map
 		npcReader = NPCReader.getInstance();
+		npcReader.loadNPCs();
 		mapReader = MapReader.getInstance();
+		mapReader.loadMaps();
 		maps = mapReader.getMaps();
 		// please don't rely on this
 		for (String name : maps.keySet()) {
@@ -140,9 +142,15 @@ public class GUI extends Application {
 			}
 		}
 
-		head.add(columnZero(), 0, 0);
-		head.add(columnOne(), 1, 0);
-		head.add(columnTwo(), 2, 0);
+		head.add(columnZero(), 0, 1);
+		head.add(columnOne(), 1, 1);
+		head.add(columnTwo(), 2, 1);
+		
+		Button button = new Button("Quit");
+		button.setOnAction(e -> {
+			GUI.primaryStage.setScene(title);
+			});
+		head.add(button, 0, 0);
 
 		updateInventory();
 		updateMap();

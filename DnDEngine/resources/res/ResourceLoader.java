@@ -14,8 +14,7 @@ public class ResourceLoader {
 	private static String userDirectory = System.getProperty("user.dir");
 	 
 	public static void setGameFolder(String folderName) {
-		gameFolder = FOLDERNAME + "/" + folderName;
-		System.out.println(gameFolder);
+		gameFolder = FOLDERNAME + "/" + folderName;  
 		NPCSFOLDER = gameFolder + "/npcs";
 		MAPSFOLDER = gameFolder + "/maps";
 		ITEMSFOLDER = gameFolder + "/items";

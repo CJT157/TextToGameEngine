@@ -22,7 +22,6 @@ public class NPCReader {
 	}
 	
 	private NPCReader() throws IOException {
-		loadNPCs();
 	}
 	
 	public void loadNPCs() throws IOException {
