@@ -24,6 +24,10 @@ public abstract class MapPiece {
 		SOLID, HOLLOW, PRESSURE
 	}
 	
+	public int distanceFromPlayer() {
+		return (int) Math.sqrt(Math.pow(Player.getPlayer().getXCoor() - xCoor, 2) + Math.pow(Player.getPlayer().getYCoor() - yCoor, 2));
+	}
+	
 	public String getSymbol() {
 		return this.symbol;
 	}
@@ -33,6 +37,16 @@ public abstract class MapPiece {
 	}
 	
 	public String[] getDescription() {
+		if (this.player != null) {
+			ArrayList<String> desc = player.getDescription();
+	        String str[] = new String[desc.size()]; 
+	  
+	        for (int j = 0; j < desc.size(); j++) { 
+	            str[j] = desc.get(j); 
+	        } 
+	  
+	        return str;
+		}
 		if (this.entity != null) {
 			ArrayList<String> desc = entity.getDescription();
 	        String str[] = new String[desc.size()]; 
@@ -68,6 +82,16 @@ public abstract class MapPiece {
 	
 	public Entity getEntity() {
 		return this.entity;
+	}
+	
+	public Color getColor() {
+		if (this.player != null) {
+			return this.player.getColor();
+		}
+		else if (this.entity != null) {
+			return this.entity.getColor();
+		}
+		return this.symbolColor;
 	}
 	
 	public PieceState getState() {

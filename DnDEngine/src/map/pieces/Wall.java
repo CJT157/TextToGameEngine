@@ -1,12 +1,14 @@
-package map;
+package map.pieces;
 
 import javafx.scene.paint.Color;
+import map.MapPiece;
+import map.MapPiece.PieceState;
 
 public class Wall extends MapPiece {
 	
 	public Wall() {
 		this.symbol = "#";
-		this.symbolColor = Color.BLACK;
+		this.symbolColor = Color.WHITE;
 		this.description = new String[] {"Just a wall. Nothing to see here"};
 		this.pieceState = PieceState.SOLID;
 	}

@@ -9,6 +9,7 @@ import java.util.Random;
 import java.util.Set;
 
 import item.ItemBuilder;
+import javafx.scene.paint.Color;
 import res.ResourceLoader;
 import textsystem.TalkingState;
 import ui.GUI;
@@ -46,6 +47,9 @@ public class NPC extends Character{
 			break;
 		case "symbol":
 			setSymbol(newInfo[1]);
+			break;
+		case "color":
+			setColor(newInfo[1]);
 			break;
 		case "description":
 			setDescription(newInfo[1]);
@@ -161,12 +165,6 @@ public class NPC extends Character{
 		}
 		
 		return availableChoices;
-	}
-	
-	public void setDescription(String desc) {
-		for (String s : desc.split("`")) {
-			this.description.add(s);
-		}
 	}
 	
 	@Override

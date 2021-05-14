@@ -21,8 +21,10 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import map.Map;
 import map.MapPiece;
@@ -52,13 +54,17 @@ public class GUI extends Application {
 	private TextField tf;
 	private static TextArea textOutput;
 	private static TextArea npcConversation;
-	private static Label map;
+	private static GridPane map;
 	private static TextArea inventory;
 	private static GridPane column0;
 	private static GridPane column1;
 	private static GridPane column2;
 	private static GridPane lookGrid;
 
+	/**
+	 * 
+	 * @return
+	 */
 	public static GUI getGUI() {
 		if (gui == null) {
 			gui = new GUI();
@@ -71,6 +77,9 @@ public class GUI extends Application {
 	}
 
 	@Override
+	/**
+	 * Creates game window and loads the game
+	 */
 	public void start(Stage arg0) throws Exception {
 		primaryStage = arg0;
 		Random r = new Random();
@@ -94,7 +103,11 @@ public class GUI extends Application {
 		primaryStage.show();
 	}
 
-	public Scene titleScene() {
+	/**
+	 * 
+	 * @return
+	 */
+	private Scene titleScene() {
 		GridPane grid = createGridPane(screenWidth, screenHeight);
 
 		Label title = new Label("Text Adventure");
@@ -126,7 +139,12 @@ public class GUI extends Application {
 		return new Scene(grid);
 	}
 	
-	public Scene mainScene() throws IOException {
+	/**
+	 * 
+	 * @return
+	 * @throws IOException
+	 */
+	private Scene mainScene() throws IOException {
 		GridPane head = createGridPane(1350, 800);
 
 		// load maps and set the start map
@@ -146,12 +164,14 @@ public class GUI extends Application {
 		head.add(columnOne(), 1, 1);
 		head.add(columnTwo(), 2, 1);
 		
+		// button to return to the menu
 		Button button = new Button("Quit");
 		button.setOnAction(e -> {
 			GUI.primaryStage.setScene(title);
 			});
 		head.add(button, 0, 0);
 
+		// run update method to load the initial text data
 		updateInventory();
 		updateMap();
 		npcConversation.setText("You aren't talking to anyone.\n\n"
@@ -168,6 +188,10 @@ public class GUI extends Application {
 		return new Scene(head);
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public Scene battleScene() {
 		BorderPane border = new BorderPane();
 		border.setPrefSize(screenWidth, screenHeight);
@@ -194,7 +218,11 @@ public class GUI extends Application {
 		return new Scene(border);
 	}
 	
-	public GridPane columnZero() {
+	/**
+	 * 
+	 * @return
+	 */
+	private GridPane columnZero() {
 		column0 = createGridPane(400, 800);
 
 		npcConversation = createTextArea(500, 574);
@@ -203,12 +231,17 @@ public class GUI extends Application {
 		return column0;
 	}
 
-	public GridPane columnOne() {
+	/**
+	 * 
+	 * @return
+	 */
+	private GridPane columnOne() {
 		column1 = createGridPane(400, 800);
 
-		map = createLabel(400, 400);
-		map.setFont(Font.font("Monospace", FontWeight.BOLD, 16));
+		map = currentMap.getMap();
 		map.setAlignment(Pos.CENTER);
+		map.setHgap(1);
+		map.setVgap(1);
 		inventory = createTextArea(400, 200);
 
 		column1.add(map, 0, 0);
@@ -217,7 +250,11 @@ public class GUI extends Application {
 		return column1;
 	}
 
-	public GridPane columnTwo() {
+	/**
+	 * 
+	 * @return
+	 */
+	private GridPane columnTwo() {
 		column2 = createGridPane(500, 800);
 
 		textOutput = createTextArea(500, 574);
@@ -251,7 +288,13 @@ public class GUI extends Application {
 		return column2;
 	}
 
-	public Button interactButton(String direction, String type) {
+	/**
+	 * 
+	 * @param direction
+	 * @param type
+	 * @return
+	 */
+	private Button interactButton(String direction, String type) {
 		Button interactButton = new Button(direction);
 		if (type.equals("use")) {
 			interactButton.setText("Use");
@@ -274,7 +317,11 @@ public class GUI extends Application {
 		return interactButton;
 	}
 
-	public EventHandler<KeyEvent> moveHandler() {
+	/**
+	 * 
+	 * @return
+	 */
+	private EventHandler<KeyEvent> moveHandler() {
 		return new EventHandler<KeyEvent>() {
 
 			@Override
@@ -282,28 +329,36 @@ public class GUI extends Application {
 				if (event.getCode() == KeyCode.W || event.getCode() == KeyCode.A || event.getCode() == KeyCode.S
 						|| event.getCode() == KeyCode.D) {
 					getCurrentMap().movePlayer(event.getCode().getName());
+					updateMap();
 				} else if (event.getCode() == KeyCode.SPACE) {
 					getCurrentMap().useCommand("Under");
+					updateMap();
 				} else if (event.getCode() == KeyCode.SHIFT) {
 					try {
 						ts.read("S");
+						updateMap();
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
 				} else if (event.getCode() == KeyCode.E) {
 					try {
 						ts.read("t all");
+						updateMap();
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
 				}
-				updateMap();
 				event.consume();
 			}
 		};
 	}
 
-	public void textInput(KeyEvent e) throws InterruptedException {
+	/**
+	 * 
+	 * @param e
+	 * @throws InterruptedException
+	 */
+	private void textInput(KeyEvent e) throws InterruptedException {
 
 		if (e.getEventType() == KeyEvent.KEY_PRESSED && e.getCode() == KeyCode.ENTER) {
 			String text = tf.getText().trim();
@@ -313,7 +368,13 @@ public class GUI extends Application {
 		}
 	}
 
-	public GridPane createGridPane(int width, int height) {
+	/**
+	 * 
+	 * @param width
+	 * @param height
+	 * @return
+	 */
+	private GridPane createGridPane(int width, int height) {
 		GridPane grid = new GridPane();
 		grid.setPrefSize(width, height);
 		grid.setAlignment(Pos.CENTER);
@@ -322,7 +383,13 @@ public class GUI extends Application {
 		return grid;
 	}
 
-	public TextArea createTextArea(int width, int height) {
+	/**
+	 * 
+	 * @param width
+	 * @param height
+	 * @return
+	 */
+	private TextArea createTextArea(int width, int height) {
 		TextArea textArea = new TextArea();
 		textArea.setPrefSize(width, height);
 		textArea.setPrefColumnCount(15);
@@ -334,37 +401,75 @@ public class GUI extends Application {
 		return textArea;
 	}
 
-	public Label createLabel(int width, int height) {
+	/**
+	 * 
+	 * @param width
+	 * @param height
+	 * @return
+	 */
+	private Label createLabel(int width, int height) {
 		Label textArea = new Label();
 		textArea.setPrefSize(width, height);
 		textArea.setFocusTraversable(false);
 		return textArea;
 	}
 
+	/**
+	 * 
+	 * @param text
+	 */
 	public void println(String text) {
 		textOutput.appendText(text + "\n");
 	}
+	
+	public void println(String[] text) {
+		for (String str : text) {
+			textOutput.appendText(str + "\n");
+		}
+	}
 
+	/**
+	 * 
+	 * @param text
+	 */
 	public void npcPrint(String text) {
 		npcConversation.appendText(text + "\n");
 	}
 
+	/**
+	 * 
+	 */
 	public void npcClear() {
 		npcConversation.clear();
 	}
 
+	/**
+	 * 
+	 */
 	public void resetGUI() {
 		println("Exiting the game...");
 		textOutput.clear();
 		npcClear();
 	}
 
+	/**
+	 * 
+	 */
 	public void updateInventory() {
 		inventory.setText("Inventory\n" + player.getInv().toString());
 	}
 
+	/**
+	 * 
+	 */
 	public void updateMap() {
-		map.setText(currentMap.toString());
+		map.getChildren().clear();
+		for (int i = currentMap.getWidth() - 1; i >= 0; i--) {
+			for (int j = 0; j < currentMap.getLength(); j++) {
+				MapNode piece = new MapNode(currentMap.getLayout()[i][j]);
+				map.add(piece, Math.abs(j), Math.abs(i - currentMap.getWidth()));
+			}
+		}
 	}
 
 	/**
@@ -397,6 +502,11 @@ public class GUI extends Application {
 		updateMap();
 	}
 
+	/**
+	 * 
+	 * @param state
+	 * @param npc
+	 */
 	public void setTextSystem(TalkingState state, Entity npc) {
 		ts.setTalking(state, npc);
 		if (state == TalkingState.COMMAND) {

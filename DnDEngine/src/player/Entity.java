@@ -3,10 +3,13 @@ package player;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import javafx.scene.paint.Color;
+
 public class Entity {
 
 	protected ArrayList<String> description = new ArrayList<String>();
 	protected boolean canFight = false;
+	protected Color color;
 	protected String symbol;
 	protected int xCoor;
 	protected int yCoor;
@@ -48,8 +51,26 @@ public class Entity {
 		return this.yCoor;
 	}
 	
+	public void setColor(Color color) {
+		this.color = color;
+	}
+	
+	public void setColor(String color) {
+		this.color = Color.web(color);
+	}
+
+	public Color getColor() {
+		return this.color;
+	}
+	
 	public ArrayList<String> getDescription() {
 		return this.description;
+	}
+	
+	public void setDescription(String desc) {
+		for (String s : desc.split("`")) {
+			this.description.add(s);
+		}
 	}
 	
 }

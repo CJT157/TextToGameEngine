@@ -1,6 +1,8 @@
-package map;
+package map.pieces;
 
 import javafx.scene.paint.Color;
+import map.MapPiece;
+import map.MapPiece.PieceState;
 
 public class FakeWall extends MapPiece {
 	
@@ -8,8 +10,8 @@ public class FakeWall extends MapPiece {
 	
 	public FakeWall() {
 		this.symbol = "#";
-		this.symbolColor = Color.BLACK;
-		this.description = new String[] {"Just a wall. Nothing to see here"};
+		this.symbolColor = Color.WHITE;
+		this.description = new String[] {"Just a wall, nothing to see here."};
 		this.pieceState = PieceState.SOLID;
 		this.wallState = true;
 	}

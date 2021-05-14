@@ -1,8 +1,10 @@
-package map;
+package map.pieces;
 
 import java.util.HashMap;
 
 import javafx.scene.paint.Color;
+import map.MapPiece;
+import map.MapPiece.PieceState;
 
 public class Floor extends MapPiece {
 	

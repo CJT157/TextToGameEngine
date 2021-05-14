@@ -1,5 +1,11 @@
 package map;
 
+import map.pieces.Exit;
+import map.pieces.Floor;
+import map.pieces.Lever;
+import map.pieces.MessageBoard;
+import map.pieces.PressurePlate;
+import map.pieces.Wall;
 import player.PushPull;
 
 public class MapPieceBuilder {

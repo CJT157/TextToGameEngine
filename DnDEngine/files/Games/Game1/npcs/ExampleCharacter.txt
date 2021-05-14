@@ -1,6 +1,7 @@
 info
 name:Colin Truemner
 symbol:C
+color:#00e1ff
 damage:2
 defense:6
 health:100

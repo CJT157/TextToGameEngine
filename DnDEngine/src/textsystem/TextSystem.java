@@ -1,5 +1,7 @@
 package textsystem;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Map;
 
 import map.MapPiece;
@@ -13,6 +15,7 @@ public class TextSystem {
 	private GUI gui = GUI.getGUI();
 	private static TextSystem ts;
 	private Player player = Player.getPlayer();
+	private ArrayList<String> moveResponses = new ArrayList<String>(Arrays.asList("Left", "West", "Up", "North", "Right", "East", "Down", "South"));
 	// get rid of the things below this
 	private TalkingState talking;
 	private NPC npcCurrent;
@@ -63,8 +66,7 @@ public class TextSystem {
 				switch (response[0]) {
 				case "Look":
 				case "L":
-					if (response[1].equals("Left") || response[1].equals("West") || response[1].equals("Up") || response[1].equals("North") ||
-							response[1].equals("Right") || response[1].equals("East") || response[1].equals("Down") || response[1].equals("South")) {
+					if (moveResponses.contains(response[1])) {
 						gui.getCurrentMap().lookDirection(response[1]);
 					} else {
 						gui.println(response[1] + " is not a direction, sorry");
@@ -72,8 +74,7 @@ public class TextSystem {
 					break;
 				case "Move":
 				case "M":
-					if (response[1].equals("Left") || response[1].equals("West") || response[1].equals("Up") || response[1].equals("North") ||
-							response[1].equals("Right") || response[1].equals("East") || response[1].equals("Down") || response[1].equals("South")) {
+					if (moveResponses.contains(response[1])) {
 						gui.getCurrentMap().movePlayer(response[1]);
 					} else {
 						gui.println(response[1] + " is not a direction, sorry");
@@ -106,8 +107,7 @@ public class TextSystem {
 					}
 					break;
 				case "Talkto":
-					if (response[1].equals("Left") || response[1].equals("West") || response[1].equals("Up") || response[1].equals("North") ||
-							response[1].equals("Right") || response[1].equals("East") || response[1].equals("Down") || response[1].equals("South")) {
+					if (moveResponses.contains(response[1])) {
 						gui.getCurrentMap().talkToNPC(response[1]);
 					} else {
 						gui.println(response[1] + " is not a direction, sorry");
@@ -137,8 +137,7 @@ public class TextSystem {
 					break;
 				case "Use":
 					if (!(response.length == 1)) {
-						if (response[1].equals("Left") || response[1].equals("West") || response[1].equals("Up") || response[1].equals("North") ||
-								response[1].equals("Right") || response[1].equals("East") || response[1].equals("Down") || response[1].equals("South")) {
+						if (moveResponses.contains(response[1])) {
 							gui.getCurrentMap().useCommand(response[1]);
 						}else {
 							gui.println(response[1] + " is not a direction, sorry");
@@ -237,7 +236,7 @@ public class TextSystem {
 			} else if (this.helpHelpCounter == 69) {
 				gui.println("Please stop. Nice.\n");
 			} else if (this.helpHelpCounter == 100) {
-				gui.println("Congrats, you found an Easter Egg\n");
+				gui.println("Congrats, you found an Easter Egg, stop now.\n");
 			} else if (this.helpHelpCounter == 420) {
 				gui.println("Please stop. Blazin.\n");
 			} else if (this.helpHelpCounter == 1000) {

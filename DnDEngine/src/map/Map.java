@@ -4,7 +4,12 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javafx.geometry.Pos;
+import javafx.scene.layout.GridPane;
+import javafx.scene.text.Text;
 import map.MapPiece.PieceState;
+import map.pieces.Exit;
+import map.pieces.FakeWall;
 import player.Entity;
 import player.NPC;
 import player.NPCReader;
@@ -30,8 +35,22 @@ public class Map {
 		layout = new MapPiece[width][length];
 	}
 
-	public void displayMap() {
-		System.out.println("DISPLAY MAP UNFINISHED");
+	public GridPane getMap() {
+		GridPane map = new GridPane();
+		map.setPrefSize(width, length);
+		map.setAlignment(Pos.CENTER);
+		map.setHgap(10);
+		map.setVgap(10);
+		
+		for (int i = width - 1; i >= 0; i--) {
+			for (int j = 0; j < length; j++) {
+				Text piece = new Text(layout[i][j].toString());
+				piece.setFill(layout[i][j].symbolColor);
+				map.add(piece, Math.abs(j), Math.abs(i - width));
+			}
+		}
+		
+		return map;
 	}
 
 	@Override
@@ -206,27 +225,24 @@ public class Map {
 		return piece;
 	}
 
-	public MapPiece findPieceAround() {
-		int playerX = player.getXCoor();
-		int playerY = player.getYCoor();
-
-		MapPiece piece = null;
-
-		piece = getPiece(playerY, playerX - 1);
-		piece = getPiece(playerY + 1, playerX);
-		piece = getPiece(playerY, playerX + 1);
-		piece = getPiece(playerY - 1, playerX);
-		piece = getPiece(playerY, playerX);
-
-		return piece;
-	}
-
 	public void setPlayerHere(boolean state) {
 		this.playerIsHere = state;
 	}
 
 	public boolean isPlayerHere() {
 		return this.playerIsHere;
+	}
+	
+	public int getWidth() {
+		return this.width;
+	}
+	
+	public int getLength() {
+		return this.length;
+	}
+	
+	public MapPiece[][] getLayout() {
+		return this.layout;
 	}
 	
 	public String saveMap() {

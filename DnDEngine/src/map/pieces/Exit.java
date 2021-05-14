@@ -1,6 +1,8 @@
-package map;
+package map.pieces;
 
 import javafx.scene.paint.Color;
+import map.MapPiece;
+import map.MapPiece.PieceState;
 import ui.GUI;
 
 public class Exit extends MapPiece {
@@ -10,7 +12,7 @@ public class Exit extends MapPiece {
 	
 	public Exit() {
 		this.symbol = "E";
-		this.symbolColor = Color.BLACK;
+		this.symbolColor = Color.rgb(235, 134, 134);
 		this.description = new String[] {"This is either the entrance or exit...", "depends on how you look at it."};
 		this.pieceState = PieceState.HOLLOW;
 	}

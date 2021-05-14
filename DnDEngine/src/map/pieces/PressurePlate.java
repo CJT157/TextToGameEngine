@@ -1,8 +1,10 @@
-package map;
+package map.pieces;
 
 import java.util.ArrayList;
 
 import javafx.scene.paint.Color;
+import map.MapPiece;
+import map.MapPiece.PieceState;
 
 public class PressurePlate extends MapPiece {
 	
@@ -11,7 +13,7 @@ public class PressurePlate extends MapPiece {
 	
 	public PressurePlate() {
 		this.symbol = "_";
-		this.symbolColor = Color.BLACK;
+		this.symbolColor = Color.WHITE;
 		this.description = new String[] {"It's a pressure plate, stand on it."};
 		this.pieceState = PieceState.PRESSURE;
 		this.toggleState = false;

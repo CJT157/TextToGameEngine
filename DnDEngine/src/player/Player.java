@@ -1,5 +1,6 @@
 package player;
 
+import javafx.scene.paint.Color;
 import ui.GUI;
 
 public class Player extends Character{
@@ -14,7 +15,11 @@ public class Player extends Character{
 		return player;
 	}
 	
-	private Player() {this.money = 100;}
+	private Player() {
+		this.money = 100;
+		this.color = Color.AQUA;
+		this.setDescription("Hey that's you!`Please stop checking yourself out.");
+	}
 	
 	public void takeItem(String item, int numItems) {
 		inv.addItem(item, numItems);
